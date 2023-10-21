@@ -41,6 +41,7 @@ nerdctl ps -a -q | xargs -I {} -n1 timeout 20 nerdctl --namespace k8s.io rm -f {
 #stop and disable services
 for i in ${ETCD} ${KUBE_APISERVER} ${KUBE_CONTROLLER_MANAGER} ${KUBE_SCHEDULER} ${CONTAINERD} ${KUBELET} ${KUBEPROXY} ${KUBECTL} ${KUBERNETES_CNI} ${KUBEADM} ${RUNC} ${CRICTL}
 do
+    systemctl stop $i
     systemctl disable --now $i || true
     pkill -9 $1 >/dev/null || true 
 done
