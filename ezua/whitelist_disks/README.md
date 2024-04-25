@@ -26,18 +26,18 @@ The bash script will prompt for a username and password that can be used to log 
 
 # Sample output
 
-./push_whitelist
-Enter Username : 
-<username>
-Enter Password :***************
-node m2-lr1-dev-vm21.mip.storage.hpecorp.net: devicelist /dev/sdb
-Warning: Permanently added 'm2-lr1-dev-vm21.mip.storage.hpecorp.net,10.227.21.21' (ECDSA) to the list of known hosts.
-node m2-lr1-dev-vm22.mip.storage.hpecorp.net: devicelist /dev/sdc,/dev/sdc,/dev/sdc
-Warning: Permanently added 'm2-lr1-dev-vm22.mip.storage.hpecorp.net,10.227.21.22' (ECDSA) to the list of known hosts.
-node m2-lr1-dev-vm23.mip.storage.hpecorp.net: devicelist /dev/sdb,/dev/sdc,/dev/sdb,/dev/sdc,/dev/sdd,/dev/sde
-Warning: Permanently added 'm2-lr1-dev-vm23.mip.storage.hpecorp.net,10.227.21.23' (ECDSA) to the list of known hosts.
-node m2-lr1-dev-vm24.mip.storage.hpecorp.net: devicelist /dev/sdd
-Warning: Permanently added 'm2-lr1-dev-vm24.mip.storage.hpecorp.net,10.227.21.24' (ECDSA) to the list of known hosts.
+./push_whitelist  
+Enter Username :   
+`<username>`  
+Enter Password :***************  
+node m2-lr1-dev-vm20.mip.storage.hpecorp.net: devicelist /dev/sdb  
+Warning: Permanently added 'm2-lr1-dev-vm20.mip.storage.hpecorp.net,10.227.20.20' (ECDSA) to the list of known hosts.  
+node m2-lr1-dev-vm21.mip.storage.hpecorp.net: devicelist /dev/sdc,/dev/sdc,/dev/sdc  
+Warning: Permanently added 'm2-lr1-dev-vm21.mip.storage.hpecorp.net,10.227.20.21' (ECDSA) to the list of known hosts.  
+node m2-lr1-dev-vm22.mip.storage.hpecorp.net: devicelist /dev/sdb,/dev/sdc,/dev/sdb,/dev/sdc,/dev/sdd,/dev/sde  
+Warning: Permanently added 'm2-lr1-dev-vm22.mip.storage.hpecorp.net,10.227.20.22' (ECDSA) to the list of known hosts.  
+node m2-lr1-dev-vm23.mip.storage.hpecorp.net: devicelist /dev/sdd  
+Warning: Permanently added 'm2-lr1-dev-vm23.mip.storage.hpecorp.net,10.227.20.23' (ECDSA) to the list of known hosts.  
 
 # Considerations
 
