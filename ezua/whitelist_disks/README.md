@@ -5,10 +5,10 @@ A user may have many disks on a node and does not want Data Fabric to use all of
 
 The list of disks will be provided in a text file called /mnt/whitelist.  Here is a sample: 
 
-m2-lr1-dev-vm20.mip.storage.hpecorp.net: /dev/sdb 
-m2-lr1-dev-vm21.mip.storage.hpecorp.net: /dev/sdc 
-m2-lr1-dev-vm22.mip.storage.hpecorp.net: /dev/sdb,/dev/sdc 
-m2-lr1-dev-vm23.mip.storage.hpecorp.net: /dev/sdd 
+m2-lr1-dev-vm20.mip.storage.hpecorp.net: /dev/sdb  
+m2-lr1-dev-vm21.mip.storage.hpecorp.net: /dev/sdc  
+m2-lr1-dev-vm22.mip.storage.hpecorp.net: /dev/sdb,/dev/sdc  
+m2-lr1-dev-vm23.mip.storage.hpecorp.net: /dev/sdd
 
 The whitelist file can have FQDN or IP addresses.
 
