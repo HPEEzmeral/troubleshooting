@@ -1,0 +1,44 @@
+#! /bin/bash
+
+password=""
+echo "Enter Username : "
+
+read username
+pass_var="Enter Password :"
+
+# this will capture the password letter by letter
+while IFS= read -p "$pass_var" -r -s -n 1 letter
+do
+    # if you press the enter key, then the loop is exited
+    if [[ $letter == $'\0' ]]
+    then
+        break
+    fi
+
+    # the letter will be stored in password
+    password=$password"$letter"
+
+    # asterisks (*) # will printed in place of the password
+    pass_var="*"
+done
+echo
+export password=$password
+
+if [[ ${#username} -eq 0 ]]; then
+  echo Please provide a username
+  exit 1
+fi
+
+if [[ ${#password} -eq 0 ]]; then
+  echo Please provide a password
+  exit 1
+fi
+
+while read -r line
+do
+  node=$(echo $line | awk '{print $1}')
+  devicelist=$(echo $line | awk '{print $2}')
+  echo node $node devicelist $devicelist
+  echo $password | sshpass scp -o StrictHostKeyChecking=no whitelist $username@$node/tmp/whitelist
+done < whitelist
+
