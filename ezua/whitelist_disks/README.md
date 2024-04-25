@@ -12,7 +12,7 @@ m2-lr1-dev-vm23.mip.storage.hpecorp.net: /dev/sdd
 
 The whitelist file can have FQDN or IP addresses.
 
-The file with the list of disks needs to be copied to each worker node before UA is installed.  The file must be called "whitelist" and must be placed in /mnt.  The user may need sudo privileges to place the whitelist file in /mnt.  The push_whitelist bash script is provided to push the whitelist file to each node specified in the file.  It is optional to use this script. The user can distribute the whitelist file themselves.
+The whitelist file needs to be copied to each worker node before UA is installed.  It should be copied to each worker before the UI is started.  The file must be called "whitelist" and must be placed in /mnt.  The user may need sudo privileges to place the whitelist file in /mnt.  The push_whitelist bash script is provided to push the whitelist file to each node specified in the file.  It is optional to use this script. The user can distribute the whitelist file themselves.
 
 # Prerequisites
 
