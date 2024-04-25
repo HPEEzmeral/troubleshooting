@@ -24,12 +24,13 @@ The bash script will look for a file called whitelist in the local directory and
 
 The bash script will prompt for a username and password that can be used to log into each worker node.
 
-# Sample output
-
 ./push_whitelist  
 Enter Username :   
 `<username>`  
 Enter Password :***************  
+
+# Sample output
+
 node m2-lr1-dev-vm20.mip.storage.hpecorp.net: devicelist /dev/sdb  
 Warning: Permanently added 'm2-lr1-dev-vm20.mip.storage.hpecorp.net,10.227.20.20' (ECDSA) to the list of known hosts.  
 node m2-lr1-dev-vm21.mip.storage.hpecorp.net: devicelist /dev/sdc,/dev/sdc,/dev/sdc  
