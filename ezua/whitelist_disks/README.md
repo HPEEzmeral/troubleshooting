@@ -1,9 +1,9 @@
 
 # Introduction to Whitelisting disks
 
-A user may have many disks on a node and does not want Data Fabric to use all of them.  A user can choose which disks are used by Data Fabric on each node.  This process is called whitelisting disks.  The disks that will be used on each node can be different. 
+A user may have many disks on a node, and if the node is selected as a data fabric node during installation, the user does not want the data fabric node to use all of the disks for storage.  A user can choose which disks are used by each data fabric node.  This process is called whitelisting disks.  The disks that will be used on each node can be different. 
 
-The user will provide the list of disks in a text file called /mnt/whitelist.  Please use the disk names provided by lsblk.  Here is a sample: 
+The user will provide the list of disks in a text file called /mnt/whitelist.  These disks must be raw block devices.  Please use the disk names provided by lsblk.  Here is a sample: 
 
 m2-lr1-dev-vm20.mip.storage.hpecorp.net: /dev/sdb  
 m2-lr1-dev-vm21.mip.storage.hpecorp.net: /dev/sdc  
@@ -29,7 +29,7 @@ Enter Username : 
 `<username>`  
 Enter Password :***************  
 
-# Sample output
+# How it works
 
 node m2-lr1-dev-vm20.mip.storage.hpecorp.net: devicelist /dev/sdb  
 Warning: Permanently added 'm2-lr1-dev-vm20.mip.storage.hpecorp.net,10.227.20.20' (ECDSA) to the list of known hosts.  
@@ -42,10 +42,10 @@ Warning: Permanently added 'm2-lr1-dev-vm23.mip.storage.hpecorp.net,10.227.20.23
 
 # Considerations
 
-If this file is present on a given node at installation time, it will be used to select which disks are used by Data Fabric.  If it is not present on a given node, Data Fabric will select all the available disks as it currently does, so it preserves current behavior.  Please ensure that this file is present on all nodes to get the desired result. 
+If this file is present on a node at installation time, and the node is selected as a data fabric node during installation, it will be used to select which disks are used by the data fabric node.  If it is not present on a data fabric node, the data fabric node will select all the available raw disks as it currently does, so it preserves current behavior.  Please ensure that this file is present on all worker nodes to get the desired result. 
 
-If a disk is listed in the whitelist for a node, but the disk is not present on the node, the disk is ignored.  If all the disks for a node are not valid, the node will not use any disk for Data Fabric storage.  This could cause an installation failure if the node is selected for Data Fabric storage.  Every node needs to have at least one disk available for Data Fabric storage.  The user must be careful when specifying disks in the file. 
+If a disk is listed in the whitelist for a data fabric node, but the disk is not present on the node, the disk is ignored.  If all the disks for a node are not valid, the node will not use any disk.  This could cause an installation failure if the node is selected as a data fabric node.  Every data fabric node needs to have at least one raw disk.  The user must be careful when specifying disks in the file. 
 
-If this file is present on a node, and the node is not listed in the file, then all disks on the node are ignored.  The node will not use any disk for Data Fabric storage.  This could cause an installation failure if the node is selected for Data Fabric storage.  Every node needs to have at least one disk available for Data Fabric storage.  The user must be careful to include all nodes in the file. 
+If this file is present on a data fabric node, and the node is not listed in the file, then all disks on the node are ignored.  The node will not use any disk.  This could cause an installation failure if the node is selected as a data fabric node during installation.  Every data fabric node needs to have at least one raw disk.  The user must be careful to include all nodes in the file. 
 
 Disks will be checked for size.  Disks must be 500 GB or larger.  Prechecks performs a similar check, so this check may be redundant.
